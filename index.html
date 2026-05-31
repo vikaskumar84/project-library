@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============================================================ -->
+    <!-- META TAGS & SEO -->
+    <!-- ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Join the best student library in Aligarh. Silent study environment, AC rooms, high-speed WiFi, 24/7 access, and affordable membership plans. Admission Open!">
+    <meta name="keywords"
+        content="student library, study room, reading hall, competitive exam preparation, silent study, library membership, Aligarh library, Akrabad library">
+    <meta name="author" content="Bright Future Library Akrabad">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bright Future Library — The Perfect Place to Study & Succeed">
+    <meta property="og:description"
+        content="Premium student library with AC, WiFi, 24/7 access. Join now for competitive exam success.">
+    <meta property="og:image" content="https://your-library.com/og-image.jpg">
+
+    <title>Bright Future Library Akrabad — Best Student Library | Admission Open</title>
+    <link rel="canonical" href="https://your-library.com">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
+                            400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+                            800: '#9a3412', 900: '#7c2d12',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ── Loading Screen ──────────────────────────────────── -->
+    <div id="loader">
+        <div class="loader-book">📚</div>
+        <div class="mt-4 text-xl font-bold gradient-text">Bright Future Library</div>
+        <div class="mt-2 text-sm text-slate-500">Loading your study space...</div>
+    </div>
+
+    <!-- ── Scroll Progress ─────────────────────────────────── -->
+    <div id="scroll-progress"></div>
+
+    <!-- ── Admission Banner ────────────────────────────────── -->
+    <div class="admission-banner">
+        <i class="fas fa-bullhorn mr-2"></i>
+        🎓 Admission Open for 2026-27 Batch! Enroll Now &amp; Get 20% Off 🎓
+    </div>
+
+    <!-- ── Navbar ──────────────────────────────────────────── -->
+    <nav class="navbar" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="#hero" class="flex items-center gap-3">
+                    <span class="text-3xl">📚</span>
+                    <div>
+                        <span class="font-display text-xl font-bold gradient-text">Bright Future Library</span>
+                        <span class="block text-xs text-slate-500">Akrabad, Aligarh</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#why-us" class="nav-link">Why Us</a>
+                    <a href="#facilities" class="nav-link">Facilities</a>
+                    <a href="#plans" class="nav-link">Plans</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#testimonials" class="nav-link">Reviews</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    <button class="md:hidden theme-toggle" id="mobileMenuBtn" aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="#contact" class="hidden md:inline-flex btn-primary text-sm py-2 px-4">
+                        <i class="fas fa-user-plus mr-2"></i>Join Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── Mobile Menu ─────────────────────────────────────── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <!-- FIX: button must have id="mobileMenuClose" so JS can find it -->
+        <button class="absolute top-6 right-6 theme-toggle" id="mobileMenuClose" aria-label="Close menu">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        <a href="#why-us">Why Us</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#plans">Plans</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-primary mt-4"><i class="fas fa-user-plus mr-2"></i>Join Now</a>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================================ -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(circle at 1px 1px, #f97316 1px, transparent 0); background-size: 40px 40px;">
+            </div>
+        </div>
+        <div class="absolute top-1/4 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 reveal">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <span class="text-sm font-medium text-green-400">Admission Open 2026-27</span>
+                    </div>
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 reveal">
+                        The Perfect Place to <br>
+                        <span class="gradient-text">Study &amp; Succeed</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-8 max-w-lg mx-auto lg:mx-0 reveal">
+                        Join Aligarh's most premium student library. Silent environment, AC rooms, high-speed WiFi, and
+                        24/7 access for your competitive exam preparation.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-10 reveal">
+                        <a href="#contact" class="btn-primary text-lg py-3 px-8">
+                            <i class="fas fa-user-plus mr-2"></i>Join Now
+                        </a>
+                        <a href="tel:+919720363066" class="btn-secondary text-lg py-3 px-8">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                    </div>
+                    <!-- Mini stats -->
+                    <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 reveal">
+                        <div class="glass-card p-4 text-center">
+                            <div class="counter text-2xl gradient-text" data-target="500">0</div>
+                            <div class="text-xs text-slate-500 mt-1">Students</div>
+                        </div>
+                        <div class="glass-card p-4 text-center">
+                            <div class="counter text-2xl gradient-text" data-target="50">0</div>
+                            <div class="text-xs text-slate-500 mt-1">Selections</div>
+                        </div>
+                        <div class="glass-card p-4 text-center">
+                            <div class="counter text-2xl gradient-text" data-target="4">0</div>
+                            <div class="text-xs text-slate-500 mt-1">Years</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right -->
+                <div class="order-1 lg:order-2 reveal-right">
+                    <div class="relative">
+                        <div class="glass-card p-4 relative z-10">
+                            <div
+                                class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+                                <div class="text-center">
+                                    <span class="text-8xl">📚</span>
+                                    <p class="text-slate-500 mt-4 font-mono text-sm">Add Library Photo Here</p>
+                                    <p class="text-slate-600 text-xs">Recommended: 800x600px</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl animate-float z-20">
+                            <span class="text-sm font-semibold text-orange-400">🌡️ AC Rooms</span>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 glass px-4 py-2 rounded-xl animate-float z-20"
+                            style="animation-delay: 1s;">
+                            <span class="text-sm font-semibold text-green-400">📶 WiFi</span>
+                        </div>
+                        <div class="absolute top-1/2 -right-8 glass px-4 py-2 rounded-xl animate-float z-20"
+                            style="animation-delay: 2s;">
+                            <span class="text-sm font-semibold text-blue-400">🔒 24/7 Access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- WHY CHOOSE US -->
+    <!-- ============================================================ -->
+    <section id="why-us" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">Built for Serious Students</h2>
+                <p class="section-subtitle mx-auto">Everything you need to focus, learn, and achieve your goals</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🔇</div>
+                    <h3 class="font-bold text-lg mb-2">Silent Environment</h3>
+                    <p class="text-slate-400 text-sm">Zero-distraction study zones designed for deep focus and
+                        concentration.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">❄️</div>
+                    <h3 class="font-bold text-lg mb-2">Air Conditioned</h3>
+                    <p class="text-slate-400 text-sm">Fully AC rooms to keep you comfortable during long study hours.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">📶</div>
+                    <h3 class="font-bold text-lg mb-2">High-Speed WiFi</h3>
+                    <p class="text-slate-400 text-sm">Fiber-optic internet for seamless online learning and research.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🪑</div>
+                    <h3 class="font-bold text-lg mb-2">Ergonomic Seating</h3>
+                    <p class="text-slate-400 text-sm">Comfortable chairs and spacious desks for extended study sessions.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="font-bold text-lg mb-2">Power Backup</h3>
+                    <p class="text-slate-400 text-sm">24/7 generator backup so your studies never get interrupted.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">📹</div>
+                    <h3 class="font-bold text-lg mb-2">CCTV Security</h3>
+                    <p class="text-slate-400 text-sm">Round-the-clock surveillance for your safety and peace of mind.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">💧</div>
+                    <h3 class="font-bold text-lg mb-2">Clean Water</h3>
+                    <p class="text-slate-400 text-sm">RO purified drinking water available throughout the premises.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="font-bold text-lg mb-2">Separate Zones</h3>
+                    <p class="text-slate-400 text-sm">Dedicated areas for group study, individual focus, and reading.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FACILITIES SECTION -->
+    <!-- ============================================================ -->
+    <section id="facilities" class="py-24 relative bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">Facilities</span>
+                <h2 class="section-title">World-Class Amenities</h2>
+                <p class="section-subtitle mx-auto">Designed to provide the best study experience</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center text-3xl mb-6">
+                        🕐</div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Study Access</h3>
+                    <p class="text-slate-400">Study anytime, day or night. Our library never closes for dedicated
+                        students preparing for competitive exams.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center text-3xl mb-6">
+                        🏠</div>
+                    <h3 class="text-xl font-bold mb-3">Individual Cabins</h3>
+                    <p class="text-slate-400">Private study cabins with lockable doors for uninterrupted personal study
+                        sessions.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center text-3xl mb-6">
+                        📖</div>
+                    <h3 class="text-xl font-bold mb-3">Reading Hall</h3>
+                    <p class="text-slate-400">Spacious, well-lit reading hall with natural light and comfortable seating
+                        arrangements.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center text-3xl mb-6">
+                        💻</div>
+                    <h3 class="text-xl font-bold mb-3">Digital Resources</h3>
+                    <p class="text-slate-400">Access to online study materials, e-books, video lectures, and practice
+                        test portals.</p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center text-3xl mb-6">
+                        🗄️</div>
+                    <h3 class="text-xl font-bold mb-3">Locker Facility</h3>
+                    <p class="text-slate-400">Secure personal lockers to store your books, laptop, and valuables safely.
+                    </p>
+                </div>
+                <div class="glass-card p-8 reveal">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 flex items-center justify-center text-3xl mb-6">
+                        🅿️</div>
+                    <h3 class="text-xl font-bold mb-3">Parking Area</h3>
+                    <p class="text-slate-400">Safe and spacious two-wheeler and four-wheeler parking with security
+                        guard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- MEMBERSHIP PLANS -->
+    <!-- ============================================================ -->
+    <section id="plans" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">Membership Plans</span>
+                <h2 class="section-title">Affordable for Every Student</h2>
+                <p class="section-subtitle mx-auto">Choose a plan that fits your study schedule and budget</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+                <!-- Monthly -->
+                <div class="plan-card reveal">
+                    <div class="text-sm text-slate-500 font-semibold mb-2">MONTHLY</div>
+                    <!-- FIX: plan-price now wraps correctly -->
+                    <div class="plan-price">₹300<span>/Month</span></div>
+                    <p class="text-slate-400 text-sm mb-6">Perfect for trial and short-term preparation</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> 24/7
+                            Library Access</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> WiFi
+                            &amp; Power Backup</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> AC Study
+                            Room</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> Drinking
+                            Water</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><i
+                                class="fas fa-times text-red-400"></i> Locker Facility</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary w-full justify-center">Choose Plan</a>
+                </div>
+                <!-- Quarterly -->
+                <div class="plan-card reveal">
+                    <div class="text-sm text-slate-500 font-semibold mb-2">QUARTERLY</div>
+                    <div class="plan-price">₹900<span>/3 months</span></div>
+                    <p class="text-slate-400 text-sm mb-6">Ideal for semester exam preparation</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> 24/7
+                            Library Access</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> WiFi
+                            &amp; Power Backup</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> AC Study
+                            Room</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> Drinking
+                            Water</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> Locker
+                            Facility</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary w-full justify-center">Choose Plan</a>
+                </div>
+                <!-- Half-Yearly (Popular) -->
+                <div class="plan-card popular reveal">
+                    <div class="text-sm text-slate-500 font-semibold mb-2">HALF-YEARLY</div>
+                    <div class="plan-price">₹1600<span>/6 months</span></div>
+                    <p class="text-slate-400 text-sm mb-6">Best value for competitive exam aspirants</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> 24/7
+                            Library Access</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> WiFi
+                            &amp; Power Backup</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> AC Study
+                            Room</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> Personal
+                            Locker</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i>
+                            Individual Cabin</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary w-full justify-center">Choose Plan</a>
+                </div>
+                <!-- Yearly — FIX: label corrected from "Monthly" to "YEARLY"; broken </span> tag fixed -->
+                <div class="plan-card reveal">
+                    <div class="text-sm text-slate-500 font-semibold mb-2">YEARLY</div>
+                    <div class="plan-price">₹3000<span>/Year</span></div>
+                    <p class="text-slate-400 text-sm mb-6">Complete year-long study commitment</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> 24/7
+                            Library Access</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> WiFi
+                            &amp; Power Backup</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> AC Study
+                            Room</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> Personal
+                            Locker</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i>
+                            Individual Cabin</li>
+                        <li class="flex items-center gap-3 text-sm"><i class="fas fa-check text-green-400"></i> Parking
+                            Included</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary w-full justify-center">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- GALLERY SECTION -->
+    <!-- ============================================================ -->
+    <section id="gallery" class="py-24 relative bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">Gallery</span>
+                <h2 class="section-title">Take a Look Inside</h2>
+                <p class="section-subtitle mx-auto">See the environment where success is built</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item reveal">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center rounded-2xl">
+                        <div class="text-center"><span class="text-5xl">📸</span>
+                            <p class="text-slate-500 text-sm mt-2">Library Interior</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay"><span class="text-white font-semibold">Main Reading Hall</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center rounded-2xl">
+                        <div class="text-center"><span class="text-5xl">📸</span>
+                            <p class="text-slate-500 text-sm mt-2">Study Area</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay"><span class="text-white font-semibold">Individual Study Zone</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center rounded-2xl">
+                        <div class="text-center"><span class="text-5xl">📸</span>
+                            <p class="text-slate-500 text-sm mt-2">AC Room</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay"><span class="text-white font-semibold">Air Conditioned Room</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center rounded-2xl">
+                        <div class="text-center"><span class="text-5xl">📸</span>
+                            <p class="text-slate-500 text-sm mt-2">Study Cabin</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay"><span class="text-white font-semibold">Private Study Cabin</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center rounded-2xl">
+                        <div class="text-center"><span class="text-5xl">📸</span>
+                            <p class="text-slate-500 text-sm mt-2">Students</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay"><span class="text-white font-semibold">Students in Focus</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div
+                        class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center rounded-2xl">
+                        <div class="text-center"><span class="text-5xl">📸</span>
+                            <p class="text-slate-500 text-sm mt-2">Entrance</p>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay"><span class="text-white font-semibold">Library Entrance</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- TESTIMONIALS -->
+    <!-- ============================================================ -->
+    <section id="testimonials" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Our Students Say</h2>
+                <p class="section-subtitle mx-auto">Real reviews from real achievers</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card reveal">
+                    <div class="flex items-center gap-1 mb-4 stars"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">"The silent environment and 24/7 access helped me
+                        prepare for my GATE exam. I got AIR 245! This library changed my life."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-lg font-bold text-white">
+                            R</div>
+                        <div>
+                            <h4 class="font-semibold">Rahul Sharma</h4>
+                            <p class="text-sm text-orange-400">GATE Qualified — AIR 245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="flex items-center gap-1 mb-4 stars"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">"Best library in Aligarh! The AC rooms, fast WiFi,
+                        and individual cabins made my UPSC preparation so much easier. Highly recommended!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-lg font-bold text-white">
+                            P</div>
+                        <div>
+                            <h4 class="font-semibold">Priya Patel</h4>
+                            <p class="text-sm text-orange-400">UPSC Aspirant</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="flex items-center gap-1 mb-4 stars"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star-half-alt"></i></div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">"I studied here for 6 months during my NEET
+                        preparation. The atmosphere is perfect for focused study. Cleared NEET in first attempt!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-lg font-bold text-white">
+                            A</div>
+                        <div>
+                            <h4 class="font-semibold">Amit Kumar</h4>
+                            <p class="text-sm text-orange-400">NEET Qualified</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="flex items-center gap-1 mb-4 stars"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">"The half-yearly plan was perfect for my semester
+                        exams. Clean, quiet, and the staff is very supportive. Best investment for my career."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center text-lg font-bold text-white">
+                            S</div>
+                        <div>
+                            <h4 class="font-semibold">Sneha Gupta</h4>
+                            <p class="text-sm text-orange-400">B.Tech Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="flex items-center gap-1 mb-4 stars"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">"I tried 3 libraries before finding this one. Nothing
+                        compares to the facilities here. The power backup saved me during exam nights!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center text-lg font-bold text-white">
+                            V</div>
+                        <div>
+                            <h4 class="font-semibold">Vikram Singh</h4>
+                            <p class="text-sm text-orange-400">SSC CGL Selected</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="flex items-center gap-1 mb-4 stars"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-slate-300 mb-6 leading-relaxed">"My daughter studied here for JEE and got into IIT
+                        Bombay. The environment is perfect for serious students. Thank you Bright Future Library!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-lg font-bold text-white">
+                            M</div>
+                        <div>
+                            <h4 class="font-semibold">Mr. Mehta</h4>
+                            <p class="text-sm text-orange-400">Parent of IIT Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- RESULTS & ACHIEVEMENTS -->
+    <!-- ============================================================ -->
+    <section id="results" class="py-24 relative bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">Results</span>
+                <h2 class="section-title">Our Success Stories</h2>
+                <p class="section-subtitle mx-auto">Numbers that speak for our quality</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="result-card reveal">
+                    <div class="counter" data-target="500">0</div>
+                    <div class="text-slate-400 mt-2">Total Students Enrolled</div>
+                </div>
+                <div class="result-card reveal">
+                    <div class="counter" data-target="50">0</div>
+                    <div class="text-slate-400 mt-2">Students Selected in Govt. Jobs</div>
+                </div>
+                <div class="result-card reveal">
+                    <div class="counter" data-target="25">0</div>
+                    <div class="text-slate-400 mt-2">IIT/NIT Selections</div>
+                </div>
+                <div class="result-card reveal">
+                    <div class="counter" data-target="100">0</div>
+                    <div class="text-slate-400 mt-2">Medical &amp; Engineering Qualifiers</div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 text-center reveal">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-2xl mx-auto mb-4">
+                        🏆</div>
+                    <h3 class="font-bold text-lg mb-2">IIT Bombay</h3>
+                    <p class="text-slate-400 text-sm">3 students selected in IITs through JEE Advanced preparation at
+                        our library.</p>
+                </div>
+                <div class="glass-card p-6 text-center reveal">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-2xl mx-auto mb-4">
+                        🎓</div>
+                    <h3 class="font-bold text-lg mb-2">UPSC Selections</h3>
+                    <p class="text-slate-400 text-sm">2 students cleared UPSC Prelims and Mains studying in our focused
+                        environment.</p>
+                </div>
+                <div class="glass-card p-6 text-center reveal">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-2xl mx-auto mb-4">
+                        💼</div>
+                    <h3 class="font-bold text-lg mb-2">Bank PO &amp; SSC</h3>
+                    <p class="text-slate-400 text-sm">15+ students selected in SBI PO, IBPS, and SSC CGL examinations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FAQ -->
+    <!-- ============================================================ -->
+    <section id="faq" class="py-24 relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Got Questions?</h2>
+                <p class="section-subtitle mx-auto">Everything you need to know before joining</p>
+            </div>
+            <div class="space-y-4">
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do I get admission?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-slate-400 text-sm leading-relaxed">Simply visit our library with a passport-size
+                            photo and ID proof. Fill out the registration form, choose your membership plan, and start
+                            studying the same day! You can also call us or fill the inquiry form on our website.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What are the library timings?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-slate-400 text-sm leading-relaxed">We are open 24 hours a day, 7 days a week!
+                            Yes, you read that right. Study anytime — early morning, late night, or weekends. Our staff
+                            is always present for your assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I pay fees in installments?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-slate-400 text-sm leading-relaxed">Yes! For half-yearly and yearly plans, we
+                            offer easy installment options. Pay 50% upfront and the rest within 30 days. Contact us for
+                            more details on flexible payment plans.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is there parking available?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-slate-400 text-sm leading-relaxed">Yes, we have a dedicated parking area for both
+                            two-wheelers and four-wheelers with a security guard. Parking is free for half-yearly and
+                            yearly members. Monthly members can park at a nominal charge of ₹100/month.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you provide study material?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-slate-400 text-sm leading-relaxed">We provide high-speed WiFi for accessing
+                            online study resources. While we don't provide physical books, our digital resource centre
+                            includes access to e-books, video lectures, and practice test portals for competitive exams.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I get a refund if I leave early?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-slate-400 text-sm leading-relaxed">We offer a 7-day money-back guarantee from the
+                            date of admission. After that, refunds are processed on a pro-rata basis minus a small
+                            processing fee. Please read our terms and conditions for complete details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CONTACT SECTION -->
+    <!-- ============================================================ -->
+    <section id="contact" class="py-24 relative bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle mx-auto">Visit us today or send an inquiry. We are here to help!</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Info + Map -->
+                <div class="reveal-left">
+                    <div class="glass-card p-8 mb-8">
+                        <h3 class="text-xl font-bold mb-6">Visit Our Library</h3>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 shrink-0">
+                                    <i class="fas fa-map-marker-alt text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-500">Address</p>
+                                    <p class="font-medium">Vijaygarh Road Akrabad, Aligarh, Uttar Pradesh — 202121</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 shrink-0">
+                                    <i class="fas fa-phone text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-500">Phone</p>
+                                    <a href="tel:+919720363066"
+                                        class="font-medium hover:text-orange-400 transition-colors">+91 9720363066</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                                    <i class="fas fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-500">Email</p>
+                                    <a href="mailto:ramkumar001991@gmail.com"
+                                        class="font-medium hover:text-orange-400 transition-colors">ramkumar001991@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0">
+                                    <i class="fas fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-500">Timings</p>
+                                    <p class="font-medium">Open 24 Hours — 7 Days a Week</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map placeholder -->
+                    <div class="glass-card p-2 rounded-2xl overflow-hidden reveal">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl flex items-center justify-center">
+                            <div class="text-center">
+                                <span class="text-4xl">🗺️</span>
+                                <p class="text-slate-500 text-sm mt-2">Google Maps Embed</p>
+                                <p class="text-slate-600 text-xs mt-1">Replace with your location iframe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="reveal-right">
+                    <div class="glass-card p-8">
+                        <h3 class="text-xl font-bold mb-2">Send Inquiry</h3>
+                        <p class="text-slate-400 text-sm mb-6">Fill out the form and we will get back to you within 24
+                            hours.</p>
+                        <!-- FIX: removed trailing comma from onsubmit attribute -->
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="space-y-5">
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-sm text-slate-400 mb-2">Full Name</label>
+                                        <input type="text" id="contactName" class="form-input" placeholder="Your Name"
+                                            required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-slate-400 mb-2">Phone Number</label>
+                                        <input type="tel" id="contactPhone" class="form-input"
+                                            placeholder="+91 XXXXX XXXXX" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-400 mb-2">Email Address</label>
+                                    <input type="email" id="contactEmail" class="form-input"
+                                        placeholder="your@email.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-400 mb-2">Interested Plan</label>
+                                    <select class="form-input" id="contactPlan">
+                                        <option value="">Select a Plan</option>
+                                        <option value="monthly">Monthly — ₹300</option>
+                                        <option value="quarterly">Quarterly — ₹900</option>
+                                        <option value="half-yearly">Half-Yearly — ₹1600</option>
+                                        <option value="yearly">Yearly — ₹3000</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-400 mb-2">Message</label>
+                                    <textarea class="form-input h-28 resize-none"
+                                        placeholder="Tell us about your study requirements..."
+                                        id="contactMessage"></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary w-full justify-center text-lg py-3">
+                                    <i class="fas fa-paper-plane mr-2"></i>Send Inquiry via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================================ -->
+    <footer class="border-t border-slate-800/50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">📚</span>
+                        <span class="font-display text-xl font-bold gradient-text">Bright Future Library Akrabad</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">Aligarh's most premium student library. Providing
+                        the perfect environment for competitive exam preparation.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#why-us" class="text-slate-400 hover:text-orange-400 text-sm transition-colors">Why
+                                Choose Us</a></li>
+                        <li><a href="#facilities"
+                                class="text-slate-400 hover:text-orange-400 text-sm transition-colors">Facilities</a>
+                        </li>
+                        <li><a href="#plans"
+                                class="text-slate-400 hover:text-orange-400 text-sm transition-colors">Membership
+                                Plans</a></li>
+                        <li><a href="#gallery"
+                                class="text-slate-400 hover:text-orange-400 text-sm transition-colors">Gallery</a></li>
+                        <li><a href="#contact"
+                                class="text-slate-400 hover:text-orange-400 text-sm transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Facilities</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-slate-400 text-sm">24/7 Study Access</span></li>
+                        <li><span class="text-slate-400 text-sm">Air Conditioned</span></li>
+                        <li><span class="text-slate-400 text-sm">High-Speed WiFi</span></li>
+                        <li><span class="text-slate-400 text-sm">Individual Cabins</span></li>
+                        <li><span class="text-slate-400 text-sm">CCTV Security</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex gap-3 mb-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-lg bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-lg bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-lg bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"
+                            aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/918650758730"
+                            class="w-10 h-10 rounded-lg bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-orange-400 hover:bg-orange-500/10 transition-all"
+                            aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p class="text-slate-500 text-sm">Follow us for study tips and updates!</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; 2026 <span class="gradient-text font-semibold">Bright Future
+                        Library Akrabad</span>. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-500 hover:text-orange-400 text-sm transition-colors">Privacy
+                        Policy</a>
+                    <a href="#" class="text-slate-500 hover:text-orange-400 text-sm transition-colors">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── Floating Buttons ─────────────────────────────────── -->
+    <a href="https://wa.me/918650758730" target="_blank" class="float-btn float-whatsapp" aria-label="WhatsApp Inquiry">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919720363066" class="float-btn float-call" aria-label="Call Now">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- ── Back to Top ──────────────────────────────────────── -->
+    <button id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- External JS (loaded at end of body so DOM is ready) -->
+    <script src="main.js"></script>
+</body>
+
+</html>
